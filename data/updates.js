@@ -15,29 +15,29 @@ const UPDATES_DATA = [
   {
     date: "8月20日",
     text: "作品情報ページにC108新刊データを追加",
-    url: "#works",
+    url: "works/C108_SyngUp.html",
     isExternal: true,
     isNew: true
   },
   {
     date: "8月20日",
     text: "つぶやき：夏コミ御礼と冬コミに向けて 更新",
-    url: "#blog",
+    url: "blog/20260819_summer_comiket.html",
     isExternal: true,
     isNew: true
   },
   {
-    date: "8月19日",
+    date: "8月20日",
     text: "照覧舎 公式Webサイト開設のお知らせ",
-    url: null,
+    url: "blog/20260820_website_open.html",
     isExternal: true,
     isNew: true
   },
   {
     date: "8月9日",
     text: "つぶやき：入稿完了！ 更新",
-    url: "#blog",
-    isExternal: true,
+    url: null,
+    isExternal: false,
     isNew: false
   }
 ];

@@ -18,7 +18,7 @@ const NEWS_DATA = [
     date: "8月20日",
     category: "告知",
     text: "照覧舎 公式Webサイト開設のお知らせ",
-    url: "#about",
+    url: "blog/20260820_website_open.html",
     isExternal: true,
     isNew: true,
     note: ""
