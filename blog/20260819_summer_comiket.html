@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>照覧舎ブログ</title>
+  <meta name="keywords" content="照覧舎,しょうらんしゃ,ブログ,制作日誌">
+  <meta name="description" content="照覧舎公式ブログ記事です。">
+  <meta name="robots" content="index,follow">
+
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       上フレーム (Header Frame)
+       ========================================================================== -->
+  <header id="frame-top">
+    <div class="header-logo-container">
+      <div class="header-logo-inner">
+        <a href="../index.html#top" class="logo-link">
+          <img src="../picture/shou.webp" alt="照覧舎 ロゴ" class="header-logo-symbol">
+          <div class="logo-text-group">
+            <span class="logo-text-main">照覧舎</span>
+            <span class="logo-text-sub">SHORANSHA OFFICIAL WEB SITE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav-bar-container">
+      <div class="nav-bar-inner">
+        <a href="../index.html#top" class="nav-btn">TOP</a>
+        <a href="../index.html#blog" class="nav-btn active">ブログ</a>
+        <a href="../index.html#works" class="nav-btn">作品情報</a>
+        <a href="../index.html#about" class="nav-btn">照覧舎について</a>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       下フレーム (Main Content Frame)
+       ========================================================================== -->
+  <main id="frame-bottom">
+    <div class="content-wrapper">
+
+      <!-- パンくずリスト -->
+      <div class="breadcrumb">
+        <a href="../index.html#top">TOP</a> &gt; <a href="../index.html#blog">ブログ</a> &gt; <span id="blog-breadcrumb-title">記事詳細</span>
+      </div>
+
+      <!-- 記事詳細エリア -->
+      <div class="detail-content-area">
+        
+        <div class="section-bar">
+          <div class="section-bar-title">▼ブログ・つぶやき</div>
+        </div>
+
+        <div style="padding: 10px 4px;">
+          
+          <div class="post-header">
+            <h1 id="blog-post-title" class="post-title">
+              <!-- 記事タイトルが自動描画されます -->
+            </h1>
+            <div id="blog-post-meta" class="post-meta">
+              <!-- メタ情報（文責・投稿日・カテゴリ）が自動描画されます -->
+            </div>
+          </div>
+
+          <div id="blog-post-body" class="post-full-body">
+            <!-- 記事本文が自動描画されます -->
+          </div>
+
+          <!-- 戻るボタン -->
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="../index.html#blog" class="back-to-list-btn">&lt;&lt; ブログ一覧へ戻る</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- フッター -->
+      <footer class="footer-section">
+        <div>copyright(C)Shoransha 2026 all right reserved.</div>
+        <div style="font-size: 10px; color: #000000; margin-top: 4px;">
+          当サークルの創作物（画像・文章）は各版権元二次創作ガイドラインの範囲内で <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank" rel="noopener">CC BY 4.0</a> に準拠します。
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       ブログデータJS & レンダリングエンジン読み込み
+       ========================================================================== -->
+  <script src="../data/blog/20260819_summer_comiket.js"></script>
+  <script src="../js/blog_detail.js"></script>
+</body>
+</html>

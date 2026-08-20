@@ -1,14 +1,177 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github Pages公開練習</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>照覧舎 - Shoransha Official Web Site</title>
+  <meta name="keywords" content="照覧舎,しょうらんしゃ,同人サークル,イラスト,同人誌,創作,作品情報,コミティア,コミケ">
+  <meta name="description" content="同人サークル「照覧舎（しょうらんしゃ）」の公式Webサイトです。作品情報、イベント参加予定、サークル活動の最新情報を発信しています。">
+  <meta name="robots" content="index,follow">
+
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-    <h1>こんにちは</h1>
-</body>
 
+  <!-- ==========================================================================
+       上フレーム (Header Frame)
+       ========================================================================== -->
+  <header id="frame-top">
+    <!-- ロゴ表示エリア（picture/shou.webp + 黒文字テキスト） -->
+    <div class="header-logo-container">
+      <div class="header-logo-inner">
+        <a href="#top" onclick="switchTab('tab-top', this); return false;" class="logo-link">
+          <img src="picture/shou.webp" alt="照覧舎 ロゴ" class="header-logo-symbol">
+          <div class="logo-text-group">
+            <span class="logo-text-main">照覧舎</span>
+            <span class="logo-text-sub">SHORANSHA OFFICIAL WEB SITE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- 青色ナビゲーションバー（白枠の中央位置に合わせて左揃え） -->
+    <nav class="nav-bar-container">
+      <div class="nav-bar-inner">
+        <a class="nav-btn active" onclick="switchTab('tab-top', this)">TOP</a>
+        <a class="nav-btn" onclick="switchTab('tab-blog', this)">ブログ</a>
+        <a class="nav-btn" onclick="switchTab('tab-works', this)">作品情報</a>
+        <a class="nav-btn" onclick="switchTab('tab-about', this)">照覧舎について</a>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       下フレーム (Main Content Frame)
+       ========================================================================== -->
+  <main id="frame-bottom">
+    <div class="content-wrapper">
+
+      <!-- 流れるスライドテロップ -->
+      <div class="news-ticker-container">
+        <div class="news-ticker-track">
+          <div id="ticker-content" class="news-ticker-content">
+            <!-- data/ticker.js より自動描画 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           1. TOP タブ
+           ==================================================================== -->
+      <div id="tab-top" class="tab-content">
+        
+        <!-- ▼お知らせ -->
+        <div class="section-bar">
+          <div class="section-bar-title">▼お知らせ</div>
+        </div>
+        <div id="news-list-container" class="item-list">
+          <!-- data/news.js より自動描画 -->
+        </div>
+
+        <!-- ▼イベント情報 -->
+        <div class="section-bar">
+          <div class="section-bar-title">▼イベント情報</div>
+        </div>
+        <div id="events-list-container" class="item-list">
+          <!-- data/events.js より自動描画 -->
+        </div>
+
+        <!-- ▼更新情報 -->
+        <div class="section-bar">
+          <div class="section-bar-title">▼更新情報</div>
+        </div>
+        <div id="updates-list-container" class="item-list">
+          <!-- data/updates.js より自動描画 -->
+        </div>
+
+        <!-- ▼SNSリンク集 -->
+        <div class="section-bar">
+          <div class="section-bar-title">▼SNSリンク集</div>
+        </div>
+        <div id="sns-list-container" class="item-list">
+          <!-- data/sns.js より自動描画 -->
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           2. ブログ タブ
+           ==================================================================== -->
+      <div id="tab-blog" class="tab-content" style="display: none;">
+        <div class="section-bar">
+          <div class="section-bar-title">▼ブログ・つぶやき</div>
+        </div>
+        <div id="blog-list-container" class="item-list" style="padding: 10px;">
+          <!-- data/blog.js より自動描画 -->
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           3. 作品情報 タブ
+           ==================================================================== -->
+      <div id="tab-works" class="tab-content" style="display: none;">
+        <div class="section-bar">
+          <div class="section-bar-title">▼作品情報・発行物一覧</div>
+        </div>
+        <div id="works-list-container" class="item-list" style="padding: 6px 10px;">
+          <!-- data/works.js より自動描画 -->
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           4. 照覧舎について タブ
+           ==================================================================== -->
+      <div id="tab-about" class="tab-content" style="display: none;">
+        <div class="section-bar">
+          <div class="section-bar-title">▼照覧舎について</div>
+        </div>
+        <div class="about-box">
+          <div id="about-profile-container">
+            <!-- data/about.js より自動描画 -->
+          </div>
+
+          <div class="section-bar" style="margin: 15px 0 6px 0;">
+            <div class="section-bar-title">▼他サークル紹介</div>
+          </div>
+          <div id="about-friends-container">
+            <!-- data/about.js より自動描画 -->
+          </div>
+
+          <div class="section-bar" style="margin: 15px 0 6px 0;">
+            <div class="section-bar-title">▼リンク・バナー</div>
+          </div>
+          <div id="about-banner-container" class="banner-preview-box">
+            <!-- data/about.js より自動描画 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           フッター
+           ==================================================================== -->
+      <footer class="footer-section">
+        <div>copyright(C)Shoransha 2026 all right reserved.</div>
+        <div style="font-size: 10px; color: #000000; margin-top: 4px;">
+          当サークルの創作物（画像・文章）は各版権元二次創作ガイドラインの範囲内で <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank" rel="noopener">CC BY 4.0</a> に準拠します。
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       データファイル & 制御スクリプト読み込み
+       ========================================================================== -->
+  <script src="data/ticker.js"></script>
+  <script src="data/news.js"></script>
+  <script src="data/events.js"></script>
+  <script src="data/updates.js"></script>
+  <script src="data/sns.js"></script>
+  <script src="data/works.js"></script>
+  <script src="data/blog.js"></script>
+  <script src="data/about.js"></script>
+  <script src="js/main.js"></script>
+</body>
 </html>

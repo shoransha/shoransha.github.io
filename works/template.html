@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>作品詳細・サンプル - 照覧舎</title>
+  <meta name="keywords" content="照覧舎,しょうらんしゃ,同人誌,作品情報">
+  <meta name="description" content="照覧舎の作品詳細・仕様・サンプル画像ページです。">
+  <meta name="robots" content="index,follow">
+
+  <!-- スタイルシート -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       上フレーム (Header Frame)
+       ========================================================================== -->
+  <header id="frame-top">
+    <div class="header-logo-container">
+      <div class="header-logo-inner">
+        <a href="../index.html#top" class="logo-link">
+          <img src="../picture/shou.webp" alt="照覧舎 ロゴ" class="header-logo-symbol">
+          <div class="logo-text-group">
+            <span class="logo-text-main">照覧舎</span>
+            <span class="logo-text-sub">SHORANSHA OFFICIAL WEB SITE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <nav class="nav-bar-container">
+      <div class="nav-bar-inner">
+        <a href="../index.html#top" class="nav-btn">TOP</a>
+        <a href="../index.html#blog" class="nav-btn">ブログ</a>
+        <a href="../index.html#works" class="nav-btn active">作品情報</a>
+        <a href="../index.html#about" class="nav-btn">照覧舎について</a>
+        <div class="nav-spacer"></div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+       下フレーム (Main Content Frame)
+       ========================================================================== -->
+  <main id="frame-bottom">
+    <div class="content-wrapper">
+
+      <!-- パンくずリスト -->
+      <div class="breadcrumb">
+        <a href="../index.html#top">TOP</a> &gt; <a href="../index.html#works">作品情報</a> &gt; <span id="work-breadcrumb-title">作品詳細</span>
+      </div>
+
+      <!-- 作品詳細エリア -->
+      <div class="detail-content-area">
+        
+        <div class="section-bar">
+          <div class="section-bar-title">▼作品詳細・仕様</div>
+        </div>
+
+        <div style="padding: 10px 4px;">
+          
+          <!-- 基本情報レイアウト（表紙＋仕様表） -->
+          <div class="work-detail-layout">
+            <div class="work-main-cover">
+              <img 
+                id="work-cover-img"
+                src="" 
+                alt="表紙" 
+                class="work-main-cover-img"
+                onerror="this.style.display='none'; document.getElementById('work-cover-placeholder').style.display='flex';"
+              >
+              <div id="work-cover-placeholder" class="work-main-cover-placeholder" style="display: none;">
+                COVER<br>IMAGE
+              </div>
+            </div>
+
+            <div class="work-detail-info">
+              <div id="work-title-area">
+                <!-- タイトル・キャッチコピーが自動描画されます -->
+              </div>
+
+              <div id="work-spec-table">
+                <!-- スペック表が自動描画されます -->
+              </div>
+            </div>
+          </div>
+
+          <!-- あらすじ・作品紹介 -->
+          <div class="section-bar" style="margin-top: 20px;">
+            <div class="section-bar-title">▼あらすじ・解説</div>
+          </div>
+          <div id="work-description-area" style="font-size: 13px; line-height: 1.8; color: #000000; padding: 6px 4px 14px;">
+            <!-- あらすじ・解説文が自動描画されます -->
+          </div>
+
+          <!-- トラックリスト（音楽作品等でデータがある場合のみ表示） -->
+          <div id="work-tracklist-section" style="display: none;">
+            <div class="section-bar" style="margin-top: 15px;">
+              <div class="section-bar-title">▼トラックリスト</div>
+            </div>
+            <div id="work-tracklist-area" style="font-size: 12px; line-height: 1.8; color: #000000; padding: 6px 4px 14px;"></div>
+          </div>
+
+          <!-- サンプル画像・試し読みコーナー -->
+          <div class="section-bar" style="margin-top: 15px;">
+            <div class="section-bar-title">▼サンプル画像・本文など</div>
+          </div>
+          <div style="padding: 6px 4px;">
+            <p style="font-size: 11px; color: #000000; margin-bottom: 8px;">
+              
+            </p>
+
+            <div id="work-samples-grid" class="sample-gallery-grid">
+              <!-- サンプル画像一覧が自動描画されます -->
+            </div>
+          </div>
+
+          <!-- 戻るボタン -->
+          <div style="text-align: center; margin-top: 30px;">
+            <a href="../index.html#works" class="back-to-list-btn">&lt;&lt; 作品情報一覧へ戻る</a>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- フッター -->
+      <footer class="footer-section">
+        <div>copyright(C)Shoransha 2026 all right reserved.</div>
+        <div style="font-size: 10px; color: #000000; margin-top: 4px;">
+          当サークルの創作物（画像・文章）は各版権元二次創作ガイドラインの範囲内で <a href="https://creativecommons.org/licenses/by/4.0/deed.ja" target="_blank" rel="noopener">CC BY 4.0</a> に準拠します。
+        </div>
+      </footer>
+
+    </div>
+  </main>
+
+  <!-- ==========================================================================
+       作品データJS & レンダリングエンジン読み込み
+       【新規作品作成時】
+       下の「../data/works/xxxx.js」を作成したJSファイル名に書き換えてください。
+       ========================================================================== -->
+  <script src="../data/works/template.js"></script>
+  <script src="../js/work_detail.js"></script>
+</body>
+</html>
