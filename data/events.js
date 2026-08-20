@@ -17,8 +17,8 @@ const EVENTS_DATA = [
     date: "8月18日",
     category: "コミケット",
     text: "C109出展申込完了しました！　かぐや様で新刊発行予定です。",
-    url: null,
-    isExternal: false,
+    url: "blog/20260820_C109.html",
+    isExternal: true,
     isNew: true
   },
   {
