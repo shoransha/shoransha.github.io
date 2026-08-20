@@ -20,7 +20,7 @@ const ABOUT_DATA = {
       value: "shoransha☆hotmail.com \n ※☆に関しては@に置換をしてください。"
     },
     {
-      label: "著作権・ライセンス",
+      label: "著作権",
       value: "各作品の公式二次創作ガイドラインの許す範囲内において、当サークル自身の制作物および当Webサイト内に掲載されているすべての画像・文章に関してのみ、クリエイティブ・コモンズ 表示 4.0 国際 ライセンス（<a href=\"https://creativecommons.org/licenses/by/4.0/deed.ja\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>）に準拠します。<br>※各原作作品の著作権・知的財産権はそれぞれの原著作者・公式権利者様に帰属します。"
     }
   ],

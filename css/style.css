@@ -19,6 +19,14 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'MPLUSRounded1c';
+  src: url('../font/MPLUSRounded1c-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -139,7 +147,7 @@ a:hover {
   margin: 0 auto;
   display: flex;
   align-items: stretch;
-  height: 28px;
+  height: 30px;
 }
 
 .nav-btn {
@@ -147,12 +155,16 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 0 16px;
-  font-size: 13px;
+  font-family: 'MPLUSRounded1c', 'NotoSansJP', sans-serif;
+  font-size: 15px;
   font-weight: bold;
+  letter-spacing: 0.5px;
+  transform: scale(0.96, 1.16);
+  transform-origin: center center;
   color: #ffffff;
   text-decoration: none;
   border-right: 1px dotted rgba(255, 255, 255, 0.6);
-  transition: background-color 0.15s;
+  transition: color 0.15s;
   cursor: pointer;
   user-select: none;
 }
@@ -162,14 +174,17 @@ a:hover {
 }
 
 .nav-btn:hover {
-  background-color: #175bb0;
-  color: #ffffaa;
+  color: #e61e1e;
   text-decoration: none;
 }
 
 .nav-btn.active {
   background-color: #124c94;
   color: #ffffff;
+}
+
+.nav-btn.active:hover {
+  color: #e61e1e;
 }
 
 .nav-spacer {
@@ -238,14 +253,16 @@ a:hover {
   font-size: 12px;
   font-weight: bold;
   color: #ff3081;
+  transform: scale(0.96, 1.16);
+  transform-origin: left center;
 }
 
 @keyframes tickerAnimation {
   0% {
-    transform: translateX(0);
+    transform: translateX(0) scale(0.96, 1.16);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-100%) scale(0.96, 1.16);
   }
 }
 
@@ -259,7 +276,7 @@ a:hover {
   font-family: 'LightNovelPOP', 'NotoSansJP', sans-serif;
   font-size: 14px;
   letter-spacing: 0.5px;
-  padding: 4px 10px;
+  padding: 5px 10px;
   margin: 10px 10px 4px 10px;
   border-top: 1px solid #7cb5f5;
   border-bottom: 1px solid #2063b0;
@@ -269,9 +286,11 @@ a:hover {
 }
 
 .section-bar-title {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 4px;
+  transform: scale(0.96, 1.16);
+  transform-origin: left center;
 }
 
 /* ==========================================================================
@@ -396,7 +415,7 @@ a:hover {
 }
 
 /* ==========================================================================
-   照覧舎について / サークル情報 (京アニ風 シアン＆アイボリー配色)
+   照覧舎について / サークル情報 (京アニ風 会社概要スタイル)
    ========================================================================== */
 #tab-about .section-bar {
   background-color: #56cada;
@@ -407,40 +426,47 @@ a:hover {
 }
 
 .about-box {
-  padding: 10px;
-  font-size: 12px;
+  padding: 15px 20px 10px;
+  font-size: 13px;
   line-height: 1.7;
 }
 
+/* 添付画像通りのシンプルな会社概要風リスト（上下ボーダー・枠線なし） */
 #tab-about .about-table {
   width: 100%;
   border-collapse: collapse;
-  margin: 8px 0 12px;
+  margin: 12px 0 20px;
+  border-top: 1px solid #888888;
+  border-bottom: 1px solid #888888;
 }
 
 #tab-about .about-table th, 
 #tab-about .about-table td {
-  border: 1px solid #9ee0ea;
-  padding: 6px 10px;
-  font-size: 12px;
+  border: none;
+  padding: 10px 12px;
+  font-size: 13px;
+  background-color: transparent;
 }
 
 #tab-about .about-table th {
-  background-color: #e4f7fa;
-  width: 120px;
-  color: #0d636f;
-  font-weight: bold;
-  text-align: left;
+  width: 130px;
+  color: #000000;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: top;
+  letter-spacing: 1px;
 }
 
 #tab-about .about-table td {
-  background-color: #fffff0;
   color: #000000;
+  vertical-align: top;
+  text-align: left;
+  line-height: 1.7;
 }
 
 #tab-about .banner-preview-box {
   margin-top: 10px;
-  padding: 10px;
+  padding: 12px;
   background: #fffff0;
   border: 1px dashed #56cada;
 }
@@ -581,6 +607,9 @@ a:hover {
   color: #175bb0;
   line-height: 1.4;
   margin-bottom: 4px;
+  display: inline-block;
+  transform: scale(0.96, 1.16);
+  transform-origin: left center;
 }
 
 .post-meta {
@@ -691,6 +720,9 @@ a:hover {
   margin: 18px 0 8px;
   border-left: 4px solid #ff3081;
   padding-left: 8px;
+  display: inline-block;
+  transform: scale(0.96, 1.16);
+  transform-origin: left center;
 }
 
 .sample-gallery-grid {
