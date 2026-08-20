@@ -3,6 +3,20 @@
  * ブログ記事データ: ひな形・テンプレート (data/blog/template.js)
  * ==============================================================================
  * このファイルをコピーして「日付_タイトルID.js」として保存し、各項目を書き換えてください。
+ * 
+ * 【文中に画像を挿入する方法】
+ * 以下のいずれかの方法で、作品情報と同じピンク枠＋説明書き（キャプション）付きの画像を簡単に挿入できます。
+ * 
+ * ◆ 方法1: 専用HTMLタグを書く（おすすめ・直感的）
+ *   <div class="blog-image-center">
+ *     <div class="blog-image-box">
+ *       <img src="picture/blog/sample.webp" alt="画像の説明">
+ *       <div class="blog-image-caption">写真の説明キャプション（太字になります）</div>
+ *     </div>
+ *   </div>
+ * 
+ * ◆ 方法2: ヘルパー関数を使う（スッキリ短く書きたい場合）
+ *   ${blogImg('picture/blog/sample.webp', '写真の説明キャプション')}
  */
 const BLOG_POST = {
   // 記事タイトル
@@ -21,5 +35,15 @@ const BLOG_POST = {
   content: `
     <p>ここにブログ記事の本文を入力してください。</p>
     <p>段落ごとに &lt;p&gt; タグで囲むときれいに改行と余白が付きます。</p>
+
+    <!-- ▼ 文中への画像挿入のサンプル（不要な場合は削除してください） -->
+    <div class="blog-image-center">
+      <div class="blog-image-box">
+        <img src="picture/blog/sample.webp" alt="作業中の様子">
+        <div class="blog-image-caption">作業机の様子とネームの下書き</div>
+      </div>
+    </div>
+
+    <p>画像の下にもこのように続きの文章を書くことができます。</p>
   `
 };

@@ -743,6 +743,45 @@ a:hover {
   padding: 3px 2px;
 }
 
+/* ==========================================================================
+   ブログ本文用 画像ボックス (作品情報と同様のピンクフレームスタイル)
+   ========================================================================== */
+.blog-image-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 14px 0;
+}
+
+.blog-image-box {
+  display: inline-block;
+  max-width: 100%;
+  border: 1px solid #ff3081;
+  background-color: #ff3081;
+  padding: 4px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.blog-image-box img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ff3081;
+  background-color: #ffffff;
+  display: block;
+}
+
+.blog-image-caption {
+  font-size: 11px;
+  font-weight: bold;
+  color: #000000;
+  background-color: #ff3081;
+  margin-top: 4px;
+  padding: 3px 6px;
+  text-align: center;
+  word-break: break-word;
+}
+
 @media (max-width: 600px) {
   .work-detail-layout {
     flex-direction: column;
@@ -753,6 +792,9 @@ a:hover {
   }
   .sample-gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  .blog-image-box {
+    max-width: 100%;
   }
 }
 
