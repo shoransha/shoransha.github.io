@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderBlog();
   renderWorks();
   renderAbout();
+  initAccessCounter();
 
   // リロード時または通常の訪問時は確実にTOPタブへ
   // （個別ページからの戻りリンク等で明示的に #blog, #works, #about が指定されている場合のみ該当タブを開く）
@@ -408,4 +409,50 @@ function renderAbout() {
       </div>
     `;
   }
+}
+
+/**
+ * 8. レトロ風アクセスカウンター (無料API連携 & リアルタイムフォールバック)
+ */
+function initAccessCounter() {
+  const counterElem = document.getElementById('retro-counter-digits');
+  if (!counterElem) return;
+
+  // 1. ローカル訪問数の取得・カウントアップ（即時表示フォールバック）
+  let localCount = 108; // C108記念ベース
+  try {
+    const saved = localStorage.getItem('shoransha_visit_count');
+    if (saved) {
+      localCount = parseInt(saved, 10) + 1;
+    }
+    localStorage.setItem('shoransha_visit_count', localCount);
+    counterElem.textContent = String(localCount).padStart(6, '0');
+  } catch (e) {
+    counterElem.textContent = '000108';
+  }
+
+  // 2. 外部無料カウンターAPI (visitorbadge.io) からリアルタイムカウントアップ & 取得
+  const endpoint = 'https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fshoransha.github.io';
+  
+  fetch(endpoint)
+    .then(response => {
+      if (!response.ok) throw new Error('API unavailable');
+      return response.text();
+    })
+    .then(svgText => {
+      // SVG内の訪問者数テキストを抽出 (例: <text ...>123</text>)
+      const match = svgText.match(/<text[^>]*>([0-9,]+)<\/text>/g);
+      if (match && match.length > 0) {
+        const lastMatch = match[match.length - 1];
+        const numStr = lastMatch.replace(/<[^>]+>/g, '').replace(/,/g, '').trim();
+        const count = parseInt(numStr, 10);
+        if (!isNaN(count) && count > 0) {
+          counterElem.textContent = String(count).padStart(6, '0');
+          try { localStorage.setItem('shoransha_visit_count', count); } catch (e) {}
+        }
+      }
+    })
+    .catch(err => {
+      // 通信制限時やオフライン時は即時フォールバック値が維持されます
+    });
 }

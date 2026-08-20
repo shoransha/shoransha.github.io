@@ -482,15 +482,62 @@ a:hover {
 }
 
 /* ==========================================================================
+   レトロ風アクセスカウンター
+   ========================================================================== */
+.retro-counter-container {
+  text-align: center;
+  margin: 25px 0 10px;
+}
+
+.retro-counter-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 13px;
+  color: #000000;
+}
+
+.retro-counter-box .counter-text {
+  font-family: 'MPLUSRounded1c', 'NotoSansJP', sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000000;
+  display: inline-block;
+  transform: scale(0.96, 1.16);
+  transform-origin: center center;
+}
+
+.retro-counter-digits {
+  display: inline-block;
+  background-color: #000000;
+  color: #00ff66;
+  font-family: 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 2px 6px;
+  border: 2px inset #888888;
+  border-radius: 2px;
+  text-shadow: 0 0 4px rgba(0, 255, 102, 0.7);
+  min-width: 65px;
+  text-align: center;
+  margin: 0 2px;
+}
+
+/* ==========================================================================
    フッター
    ========================================================================== */
 .footer-section {
   text-align: center;
-  padding: 20px 10px 10px;
+  padding: 15px 10px 10px;
   color: #000000;
   font-size: 11px;
   border-top: 1px solid #d0e4f7;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
 /* レスポンシブ対応 */
