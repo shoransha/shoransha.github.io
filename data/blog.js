@@ -15,6 +15,14 @@
  */
 const BLOG_DATA = [
   {
+    date: "R8/08/24",
+    author: "弌鶴",
+    title: "メインビジュアルを追加しました！",
+    url: "blog/20260823_toppage.html",
+    body: "TOPページにメインビジュアルを追加しました！",
+    isNew: true
+  },
+  {
     date: "R8/08/20",
     author: "弌鶴",
     title: "C109の申し込みをしました！",

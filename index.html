@@ -49,6 +49,7 @@
         <a class="nav-btn active" onclick="switchTab('tab-top', this)">TOP</a>
         <a class="nav-btn" onclick="switchTab('tab-blog', this)">ブログ</a>
         <a class="nav-btn" onclick="switchTab('tab-works', this)">作品情報</a>
+        <a class="nav-btn" onclick="switchTab('tab-settings', this)">設定集</a>
         <a class="nav-btn" onclick="switchTab('tab-about', this)">照覧舎について</a>
         <div class="nav-spacer"></div>
       </div>
@@ -75,6 +76,11 @@
            ==================================================================== -->
       <div id="tab-top" class="tab-content">
         
+        <!-- メインビジュアル -->
+        <div class="main-visual-container">
+          <img src="picture/main.webp" alt="照覧舎 メインビジュアル" class="main-visual-img">
+        </div>
+
         <!-- ▼お知らせ -->
         <div class="section-bar">
           <div class="section-bar-title">▼お知らせ</div>
@@ -134,7 +140,19 @@
       </div>
 
       <!-- ====================================================================
-           4. 照覧舎について タブ
+           4. 設定集 タブ
+           ==================================================================== -->
+      <div id="tab-settings" class="tab-content" style="display: none;">
+        <div class="section-bar">
+          <div class="section-bar-title">▼設定集・資料</div>
+        </div>
+        <div id="settings-list-container" class="item-list" style="padding: 10px;">
+          <!-- data/settings.js より自動描画 -->
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           5. 照覧舎について タブ
            ==================================================================== -->
       <div id="tab-about" class="tab-content" style="display: none;">
         <div class="section-bar">
@@ -194,6 +212,7 @@
   <script src="data/updates.js"></script>
   <script src="data/sns.js"></script>
   <script src="data/works.js"></script>
+  <script src="data/settings.js"></script>
   <script src="data/blog.js"></script>
   <script src="data/about.js"></script>
   <script src="js/main.js"></script>

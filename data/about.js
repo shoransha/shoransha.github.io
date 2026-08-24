@@ -13,7 +13,7 @@ const ABOUT_DATA = {
     },
     {
       label: "主な活動",
-      value: "アイマスやアニメ・漫画などといったジャンルでの二次創作、コミケット等の即売会での同人誌の頒布。\nアイマスに関しては「照覧舎｜P@STEL COLOR」という名義で活動。"
+      value: "アイマスやアニメ・漫画などといったジャンルでの二次創作、コミケット等の即売会での同人誌の頒布。\nアイマスに関しては「照覧舎｜P@STEL COLOR」名義で活動。"
     },
     {
       label: "連絡先",
@@ -39,7 +39,8 @@ const ABOUT_DATA = {
 
   // 3. 自サークルのリンクバナー情報
   banner: {
-    description: "当サイトはリンクフリーです。リンクの際はトップページにお願いいたします。",
-    code: '<a href="https://shoransha.github.io/"><img src="picture/shou.webp" alt="照覧舎"></a>'
+    description: "当サイトはリンクフリーです。リンクの際はトップページ（https://shoransha.github.io/）にお願いいたします。<br>必要であれば下記のバナーをコピーしてご利用ください。",
+    image: "picture/banner.png",
+    code: '<a href="https://shoransha.github.io/"><img src="https://shoransha.github.io/picture/banner.png" alt="照覧舎" width="200" height="40"></a>'
   }
 };

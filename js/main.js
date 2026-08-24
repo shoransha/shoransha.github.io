@@ -35,7 +35,8 @@ function switchTab(tabId, clickedElement) {
       'tab-top': 0,
       'tab-blog': 1,
       'tab-works': 2,
-      'tab-about': 3
+      'tab-settings': 3,
+      'tab-about': 4
     };
     const index = tabMap[tabId] ?? 0;
     if (navBtns[index]) {
@@ -62,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSNS();
   renderBlog();
   renderWorks();
+  renderSettings();
   renderAbout();
   initAccessCounter();
 
@@ -351,7 +353,40 @@ function renderWorks() {
 }
 
 /**
- * 7. 照覧舎について (data/about.js)
+ * 7. 設定集・資料一覧の描画 (data/settings.js)
+ */
+function renderSettings() {
+  const container = document.getElementById('settings-list-container');
+  if (!container || typeof SETTINGS_DATA === 'undefined') return;
+
+  container.innerHTML = SETTINGS_DATA.map(item => {
+    const newBadge = item.isNew ? '<img src="picture/new.gif" alt="NEW!" class="new-gif-icon">' : '';
+    const dateHtml = item.date ? `<div class="list-date" style="width: auto; margin-right: 12px; font-size: 11px; color: #000000;">${item.date}</div>` : '';
+    const catHtml = item.category ? `<div style="font-size: 11px; font-weight: bold; color: #175bb0; margin-bottom: 2px;">【${item.category}】</div>` : '';
+    
+    let titleHtml = item.title;
+    if (item.url) {
+      titleHtml = `<a href="${item.url}" style="font-size: 13px; font-weight: bold; color: #000000; text-decoration: underline;">${item.title}</a> ${newBadge}`;
+    } else {
+      titleHtml = `<span style="font-size: 13px; font-weight: bold; color: #000000;">${item.title}</span> ${newBadge}`;
+    }
+
+    return `
+      <div style="padding: 10px 4px; border-bottom: 1px dotted #c5dcf0;">
+        <div style="display: flex; align-items: baseline; margin-bottom: 4px;">
+          ${catHtml}
+          ${titleHtml}
+        </div>
+        <div style="font-size: 12px; color: #000000; line-height: 1.6; padding-left: 2px;">
+          ${item.description ? item.description.replace(/\n/g, '<br>') : ''}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+/**
+ * 8. 照覧舎について (data/about.js)
  */
 function renderAbout() {
   const profileContainer = document.getElementById('about-profile-container');
@@ -402,10 +437,17 @@ function renderAbout() {
   }
 
   if (bannerContainer && ABOUT_DATA.banner) {
+    const bannerImgHtml = ABOUT_DATA.banner.image ? `
+      <div style="margin: 10px 0 8px;">
+        <img src="${ABOUT_DATA.banner.image}" alt="照覧舎 バナー" width="200" height="40" style="border: 1px solid #7cd7e3; vertical-align: middle; display: inline-block;">
+      </div>
+    ` : '';
+
     bannerContainer.innerHTML = `
-      <p>${ABOUT_DATA.banner.description}</p>
+      <p style="font-size: 12px; line-height: 1.7; color: #000000;">${ABOUT_DATA.banner.description}</p>
+      ${bannerImgHtml}
       <div style="margin-top: 6px;">
-        <input type="text" class="banner-code" readonly value="${ABOUT_DATA.banner.code.replace(/"/g, '&quot;')}">
+        <input type="text" class="banner-code" readonly value="${ABOUT_DATA.banner.code.replace(/"/g, '&quot;')}" onclick="this.select();">
       </div>
     `;
   }

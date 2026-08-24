@@ -214,7 +214,7 @@ a:hover {
   align-items: center;
   background-color: #f7fbff;
   border-bottom: 1px solid #d0e4f7;
-  height: 24px;
+  height: 28px;
   overflow: hidden;
   position: relative;
   font-family: 'LightNovelPOP', 'NotoSansJP', sans-serif;
@@ -224,7 +224,7 @@ a:hover {
   background-color: #ffffff;
   color: #cc0000;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 1px;
   padding: 0 10px;
   height: 100%;
@@ -250,7 +250,7 @@ a:hover {
   white-space: nowrap;
   padding-left: 100%;
   animation: tickerAnimation 22s linear infinite;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   color: #ff3081;
   transform: scale(0.96, 1.16);
@@ -264,6 +264,25 @@ a:hover {
   100% {
     transform: translateX(-100%) scale(0.96, 1.16);
   }
+}
+
+/* ==========================================================================
+   TOP メインビジュアル
+   ========================================================================== */
+.main-visual-container {
+  width: 100%;
+  text-align: center;
+  margin: 0 0 6px 0;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.main-visual-img {
+  width: 100%;
+  max-width: 780px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 }
 
 /* ==========================================================================

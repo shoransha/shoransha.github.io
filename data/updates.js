@@ -13,6 +13,13 @@
  */
 const UPDATES_DATA = [
   {
+    date: "8月24日",
+    text: "メインビジュアルを追加しました！",
+    url: "blog/20260823_toppage.html",
+    isExternal: true,
+    isNew: true
+  },
+  {
     date: "8月20日",
     text: "作品情報ページにC108新刊データを追加",
     url: "works/C108_SyngUp.html",
