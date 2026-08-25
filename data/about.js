@@ -34,6 +34,13 @@ const ABOUT_DATA = {
       url: "https://x.com/koro_yomu",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "友人のサークルです。東方や艦これをメインに出しているらしい。"
+    },
+    {
+      name: "ドライブマニア",
+      master: "ころまる",
+      url: null,
+      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
+      description: "白楼軒と照覧舎による合同サークル（という体）。評論・情報に関してはこちらの名義で活動。"
     }
   ],
 
