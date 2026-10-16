@@ -48,5 +48,16 @@ const WORK_DETAIL = {
       image: "C108_SyngUp/003.webp",
       caption: "本文サンプル 2"
     }
-  ]
+  ],
+
+  // 【本文PDF閲覧・ダウンロード機能】
+  // 本文全体のPDFを閲覧・ダウンロードできるようにする場合は、ここにリンク先（URLまたはファイルパス）を指定します。
+  // 非表示にしたい作品の場合は、nullにするか、項目ごと削除・コメントアウトしてください。
+  pdfUrl: "https://www.dropbox.com/scl/fi/unhslht28jdnvlkhgvn37/C108_gakumas_online.pdf?rlkey=cgkkfirhugabqgbl5mwt9vmdd&st=ymubfu9y&dl=0", // 例: "https://drive.google.com/...", "pdf/sample.pdf", null
+
+  // （任意）案内メッセージを変更したい場合のみ指定（省略時は「本文のデータはこちらから閲覧・ダウンロードできます。」になります）
+  pdfText: "『SyngUp! 合宿篇』に関してはこちらから閲覧・ダウンロードできます。<br> 下記リンクを踏まれると外部サイト（Dropbox）へとリダイレクトされます。",
+
+  // （任意）ボタンの表記を変更したい場合のみ指定（省略時は「本文PDFを閲覧・ダウンロード >>」になります）
+  pdfButtonText: "本文PDFを閲覧・ダウンロード &gt;&gt;"
 };

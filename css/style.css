@@ -839,6 +839,45 @@ a:hover {
   padding: 3px 2px;
 }
 
+/* 本文PDF閲覧・ダウンロード案内ボックス */
+.work-pdf-box {
+  margin-top: 18px;
+  padding: 14px 16px;
+  background-color: #fffff0;
+  border: 1px dashed #ff3081;
+  text-align: center;
+}
+
+.work-pdf-message {
+  font-size: 12px;
+  font-weight: normal;
+  color: #000000;
+  margin-bottom: 8px;
+}
+
+.work-pdf-button {
+  display: inline-block;
+  padding: 6px 18px;
+  background-color: #ffffff;
+  border: 1px solid #ff3081;
+  color: #000000;
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all 0.15s ease;
+}
+
+.work-pdf-button:hover {
+  background-color: #ff3081;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.work-pdf-button:hover .external-link-icon {
+  color: #ffffff;
+}
+
 /* ==========================================================================
    ブログ本文用 画像ボックス (作品情報と同様のピンクフレームスタイル)
    ========================================================================== */

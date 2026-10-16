@@ -169,6 +169,62 @@ function initWorkDetail() {
       `;
     }).join('');
   }
+
+  // 9. 本文全体のPDF閲覧・ダウンロード案内（作品毎に表示/非表示切り替え可能）
+  let pdfContainer = document.getElementById('work-pdf-container');
+  if (!pdfContainer && sampleGrid && sampleGrid.parentNode) {
+    pdfContainer = document.createElement('div');
+    pdfContainer.id = 'work-pdf-container';
+    sampleGrid.parentNode.appendChild(pdfContainer);
+  }
+
+  let pdfUrl = null;
+  let pdfText = "本文のデータはこちらから閲覧・ダウンロードできます。";
+  let pdfBtnLabel = "閲覧・ダウンロードはこちらから";
+
+  if (WORK_DETAIL.pdf) {
+    if (typeof WORK_DETAIL.pdf === 'string' && WORK_DETAIL.pdf.trim() !== '') {
+      pdfUrl = WORK_DETAIL.pdf.trim();
+    } else if (typeof WORK_DETAIL.pdf === 'object' && WORK_DETAIL.pdf.url && WORK_DETAIL.pdf.url.trim() !== '') {
+      pdfUrl = WORK_DETAIL.pdf.url.trim();
+      if (WORK_DETAIL.pdf.text) {
+        pdfText = WORK_DETAIL.pdf.text;
+      }
+      if (WORK_DETAIL.pdf.buttonText) {
+        pdfBtnLabel = WORK_DETAIL.pdf.buttonText;
+      }
+    }
+  } else if (WORK_DETAIL.pdfUrl && typeof WORK_DETAIL.pdfUrl === 'string' && WORK_DETAIL.pdfUrl.trim() !== '') {
+    pdfUrl = WORK_DETAIL.pdfUrl.trim();
+    if (WORK_DETAIL.pdfText) {
+      pdfText = WORK_DETAIL.pdfText;
+    }
+    if (WORK_DETAIL.pdfButtonText) {
+      pdfBtnLabel = WORK_DETAIL.pdfButtonText;
+    }
+  }
+
+  if (pdfContainer) {
+    if (pdfUrl) {
+      let resolvedUrl = pdfUrl;
+      if (!/^(https?:\/\/|data:)/i.test(resolvedUrl) && !resolvedUrl.startsWith('../')) {
+        resolvedUrl = `../${resolvedUrl}`;
+      }
+
+      pdfContainer.innerHTML = `
+        <div class="work-pdf-box">
+          <div class="work-pdf-message">${pdfText}</div>
+          <a href="${resolvedUrl}" target="_blank" rel="noopener" class="work-pdf-button">
+            ${pdfBtnLabel} <span class="external-link-icon">⧉</span>
+          </a>
+        </div>
+      `;
+      pdfContainer.style.display = 'block';
+    } else {
+      pdfContainer.innerHTML = '';
+      pdfContainer.style.display = 'none';
+    }
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initWorkDetail);
