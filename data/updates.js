@@ -13,6 +13,13 @@
  */
 const UPDATES_DATA = [
   {
+    date: "10月16日",
+    text: "『SyngUp!合宿篇』の本文pdfをアップロードしました！",
+    url: "works/C108_SyngUp.html",
+    isExternal: true,
+    isNew: true
+  },
+  {
     date: "8月24日",
     text: "メインビジュアルを追加しました！",
     url: "blog/20260823_toppage.html",
@@ -24,21 +31,21 @@ const UPDATES_DATA = [
     text: "作品情報ページにC108新刊データを追加",
     url: "works/C108_SyngUp.html",
     isExternal: true,
-    isNew: true
+    isNew: false
   },
   {
     date: "8月20日",
     text: "つぶやき：夏コミ御礼と冬コミに向けて 更新",
     url: "blog/20260819_summer_comiket.html",
     isExternal: true,
-    isNew: true
+    isNew: false
   },
   {
     date: "8月20日",
     text: "照覧舎 公式Webサイト開設のお知らせ",
     url: "blog/20260820_website_open.html",
     isExternal: true,
-    isNew: true
+    isNew: false
   },
   {
     date: "8月9日",
