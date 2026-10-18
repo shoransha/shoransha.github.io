@@ -332,7 +332,7 @@ a:hover {
 }
 
 .list-date {
-  width: 76px;
+  width: 125px;
   flex-shrink: 0;
   color: #000000;
   font-weight: normal;
@@ -371,6 +371,31 @@ a:hover {
   font-size: 11px;
   margin-top: 1px;
   display: block;
+}
+
+/* 「もっと見る」折り畳み展開テキスト */
+.more-btn-container {
+  padding: 4px 6px 8px 6px;
+  text-align: center;
+}
+
+.more-toggle-btn {
+  display: inline-block;
+  background: none;
+  border: none;
+  color: #000000;
+  font-size: 11px;
+  font-weight: normal;
+  padding: 2px 6px;
+  cursor: pointer;
+  font-family: inherit;
+  outline: none;
+  transition: color 0.15s ease;
+}
+
+.more-toggle-btn:hover {
+  color: #ff3081;
+  text-decoration: underline;
 }
 
 /* ==========================================================================

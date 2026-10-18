@@ -119,13 +119,63 @@ function renderTicker() {
 }
 
 /**
+ * リスト項目の折り畳み描画共通ヘルパー
+ * 5件を超える場合は5件のみ表示し、以降を折り畳み「もっと見る」ボタンを設置
+ */
+function renderCollapsibleList(container, data, sectionKey, itemRenderer, limit = 5) {
+  if (!container || !data || data.length === 0) return;
+
+  const visibleItems = data.slice(0, limit);
+  const hiddenItems = data.slice(limit);
+
+  const visibleHtml = visibleItems.map(itemRenderer).join('');
+  let hiddenHtml = '';
+  let toggleBtnHtml = '';
+
+  if (hiddenItems.length > 0) {
+    hiddenHtml = `
+      <div id="${sectionKey}-hidden-rows" class="hidden-rows" style="display: none;">
+        ${hiddenItems.map(itemRenderer).join('')}
+      </div>
+    `;
+    toggleBtnHtml = `
+      <div class="more-btn-container">
+        <button type="button" class="more-toggle-btn" onclick="toggleMoreList('${sectionKey}', this)">
+          ▼ もっと見る
+        </button>
+      </div>
+    `;
+  }
+
+  container.innerHTML = visibleHtml + hiddenHtml + toggleBtnHtml;
+}
+
+/**
+ * 「もっと見る / 閉じる」のトグル処理
+ */
+function toggleMoreList(sectionKey, btn) {
+  const hiddenRows = document.getElementById(`${sectionKey}-hidden-rows`);
+  if (!hiddenRows) return;
+
+  const isHidden = hiddenRows.style.display === 'none';
+  if (isHidden) {
+    hiddenRows.style.display = 'block';
+    if (btn) btn.textContent = '▲ 閉じる';
+  } else {
+    hiddenRows.style.display = 'none';
+    if (btn) btn.textContent = '▼ もっと見る';
+  }
+}
+window.toggleMoreList = toggleMoreList;
+
+/**
  * 2. ▼お知らせの描画 (data/news.js)
  */
 function renderNews() {
   const container = document.getElementById('news-list-container');
   if (!container || typeof NEWS_DATA === 'undefined') return;
 
-  container.innerHTML = NEWS_DATA.map(item => {
+  renderCollapsibleList(container, NEWS_DATA, 'news', (item) => {
     // リンク先処理（#works, #blog, 外部リンクなど）
     let linkHtml = '';
     const newBadge = item.isNew ? '<img src="picture/new.gif" alt="NEW!" class="new-gif-icon">' : '';
@@ -155,7 +205,7 @@ function renderNews() {
         </div>
       </div>
     `;
-  }).join('');
+  }, 5);
 }
 
 /**
@@ -165,7 +215,7 @@ function renderEvents() {
   const container = document.getElementById('events-list-container');
   if (!container || typeof EVENTS_DATA === 'undefined') return;
 
-  container.innerHTML = EVENTS_DATA.map(item => {
+  renderCollapsibleList(container, EVENTS_DATA, 'events', (item) => {
     let linkHtml = '';
     const newBadge = item.isNew ? '<img src="picture/new.gif" alt="NEW!" class="new-gif-icon">' : '';
     const extIcon = item.isExternal ? '<span class="external-link-icon">⧉</span>' : '';
@@ -192,7 +242,7 @@ function renderEvents() {
         </div>
       </div>
     `;
-  }).join('');
+  }, 5);
 }
 
 /**
@@ -202,7 +252,7 @@ function renderUpdates() {
   const container = document.getElementById('updates-list-container');
   if (!container || typeof UPDATES_DATA === 'undefined') return;
 
-  container.innerHTML = UPDATES_DATA.map(item => {
+  renderCollapsibleList(container, UPDATES_DATA, 'updates', (item) => {
     let linkHtml = '';
     const newBadge = item.isNew ? '<img src="picture/new.gif" alt="NEW!" class="new-gif-icon">' : '';
     const extIcon = item.isExternal ? '<span class="external-link-icon">⧉</span>' : '';
@@ -228,7 +278,7 @@ function renderUpdates() {
         </div>
       </div>
     `;
-  }).join('');
+  }, 5);
 }
 
 /**
