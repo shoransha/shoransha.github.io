@@ -20,7 +20,7 @@ function switchTab(tabId, clickedElement) {
   // 対象タブを表示
   const target = document.getElementById(tabId);
   if (target) {
-    target.style.display = 'block';
+    target.style.display = 'inline-flex';
   }
 
   // ナビゲーションのactiveクラス更新
@@ -44,12 +44,30 @@ function switchTab(tabId, clickedElement) {
     }
   }
 
-  // メインフレームを最上部へスクロール
+  // メインフレームを最先頭（右端）へスクロール
   const mainFrame = document.getElementById('frame-bottom');
   if (mainFrame) {
     mainFrame.scrollTop = 0;
+    mainFrame.scrollLeft = 0;
   }
   window.scrollTo(0, 0);
+}
+
+/**
+ * 縦書き横スクロール用 マウスホイール操作の横スクロール変換
+ */
+function initHorizontalWheel() {
+  const mainFrame = document.getElementById('frame-bottom');
+  if (!mainFrame) return;
+
+  mainFrame.addEventListener('wheel', (e) => {
+    // 上下ホイール操作（deltaY）を横スクロールに変換
+    if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      e.preventDefault();
+      // vertical-rl では左（進む方向）へスクロールさせるため -e.deltaY
+      mainFrame.scrollBy({ left: -e.deltaY, behavior: 'auto' });
+    }
+  }, { passive: false });
 }
 
 // ==========================================
@@ -66,6 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderSettings();
   renderAbout();
   initAccessCounter();
+  initHorizontalWheel();
 
   // リロード時または通常の訪問時は確実にTOPタブへ
   // （個別ページからの戻りリンク等で明示的に #blog, #works, #about が指定されている場合のみ該当タブを開く）
@@ -92,10 +111,11 @@ document.addEventListener('DOMContentLoaded', () => {
     switchTab('tab-top');
   }
 
-  // スクロール位置を最上部に確実に固定
+  // スクロール位置を右端（先頭）に確実に固定
   const mainFrame = document.getElementById('frame-bottom');
   if (mainFrame) {
     mainFrame.scrollTop = 0;
+    mainFrame.scrollLeft = 0;
   }
   window.scrollTo(0, 0);
 });
@@ -104,6 +124,7 @@ window.addEventListener('load', () => {
   const mainFrame = document.getElementById('frame-bottom');
   if (mainFrame) {
     mainFrame.scrollTop = 0;
+    mainFrame.scrollLeft = 0;
   }
   window.scrollTo(0, 0);
 });

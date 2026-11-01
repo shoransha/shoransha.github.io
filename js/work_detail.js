@@ -225,6 +225,19 @@ function initWorkDetail() {
       pdfContainer.style.display = 'none';
     }
   }
+
+  // 縦書き横スクロール用 ホイール操作対応
+  const mainFrame = document.getElementById('frame-bottom');
+  if (mainFrame) {
+    mainFrame.scrollTop = 0;
+    mainFrame.scrollLeft = 0;
+    mainFrame.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        e.preventDefault();
+        mainFrame.scrollBy({ left: -e.deltaY, behavior: 'auto' });
+      }
+    }, { passive: false });
+  }
 }
 
 document.addEventListener('DOMContentLoaded', initWorkDetail);
