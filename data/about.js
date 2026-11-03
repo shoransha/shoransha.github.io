@@ -43,7 +43,7 @@ const ABOUT_DATA = {
       name: "白楼軒",
       master: "ころまる",
       url: "https://hakuroken.net/",
-      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
+      banner: "picture/about_us/hakuroken.png", // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "友人のサークル。東方や艦これを中心に漫画本を出しているらしい。"
     },
     {
@@ -84,31 +84,31 @@ const ABOUT_DATA = {
   sidebar: [
     {
       title: "▼公式サイト集",
-      // banners: [
-      //   {
-      //     image: "banner_sample.png",
-      //     url: "https://shoransha.github.io/",
-      //     text: "照覧舎プロジェクト第1弾! ⧉",
-      //     isExternal: true
-      //   },
-      //   {
-      //     image: "banner_sample.png",
-      //     url: "#works",
-      //     text: "作品情報一覧へ",
-      //     isExternal: false
-      //   }
-      // ]
+      banners: [
+        {
+          image: "bn01_haruka.jpg",
+          url: "http://www.idolmaster-anime.jp/",
+          text: "無印アニメ公式サイト ⧉",
+          isExternal: true
+        },
+        // {
+        //   image: "imas_sc.png",
+        //   url: "https://shinycolors.idolmaster.jp/",
+        //   text: "シャニマス公式サイト ⧉",
+        //   isExternal: true
+        // }
+      ]
     },
     {
       title: "▼他サークル集",
-      // banners: [
-      //   {
-      //     image: "banner_sample.png",
-      //     url: null,
-      //     text: null,
-      //     isExternal: false
-      //   }
-      // ]
+      banners: [
+        {
+          image: "hakuroken.png",
+          url: "https://hakuroken.net/",
+          text: null,
+          isExternal: false
+        }
+      ]
     }
   ]
 };

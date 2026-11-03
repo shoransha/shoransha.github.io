@@ -27,11 +27,6 @@
   font-display: swap;
 }
 
-html {
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -44,7 +39,6 @@ body {
   line-height: 1.5;
   color: #000000;
   background-color: #c9e6fc; /* 水色背景 */
-  min-width: 800px; /* PC版等比縮小表示用固定幅 */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -67,7 +61,6 @@ a:hover {
   background-color: #bce1fd;
   border-bottom: 2px solid #8abde6;
   flex-shrink: 0;
-  min-width: 800px;
   z-index: 100;
 }
 
@@ -76,7 +69,6 @@ a:hover {
   overflow-y: scroll;
   overflow-x: auto;
   background-color: #c9e6fc;
-  min-width: 800px;
   padding: 0;
   scrollbar-width: thin;
   scrollbar-color: #5c9dd6 #c9e6fc;
@@ -203,7 +195,7 @@ a:hover {
    メインコンテンツコンテナ (白枠 780px)
    ========================================================================== */
 .content-wrapper {
-  width: 780px;
+  width: 100%;
   max-width: 780px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -623,6 +615,17 @@ a:hover {
   line-height: 1.7;
 }
 
+/* 他サークル紹介の各サークル間の薄い灰色点線 */
+#about-friends-container .about-table th,
+#about-friends-container .about-table td {
+  border-bottom: 1px dotted #c8c8c8;
+}
+
+#about-friends-container .about-table tr:last-child th,
+#about-friends-container .about-table tr:last-child td {
+  border-bottom: none;
+}
+
 #tab-about .banner-preview-box {
   margin-top: 10px;
   padding: 12px;
@@ -697,6 +700,29 @@ a:hover {
   font-size: 11px;
   border-top: 1px solid #d0e4f7;
   margin-top: 15px;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 600px) {
+  .list-row {
+    flex-wrap: wrap;
+  }
+  .list-date {
+    width: 70px;
+  }
+  .list-category {
+    width: auto;
+    margin-right: 8px;
+  }
+  .list-body {
+    width: 100%;
+    margin-top: 2px;
+    padding-left: 8px;
+  }
+  .nav-btn {
+    padding: 0 10px;
+    font-size: 12px;
+  }
 }
 
 /* ==========================================================================
@@ -1034,5 +1060,34 @@ a:hover {
   padding: 3px 6px;
   text-align: center;
   word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .about-layout-container {
+    flex-direction: column;
+  }
+  .about-main-content {
+    order: 1;
+  }
+  .about-sidebar {
+    order: 2;
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid #d0e4f7;
+    padding: 15px 10px 10px;
+  }
+  .work-detail-layout {
+    flex-direction: column;
+    align-items: center;
+  }
+  .work-main-cover {
+    width: 140px;
+  }
+  .sample-gallery-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+  .blog-image-box {
+    max-width: 100%;
+  }
 }
 

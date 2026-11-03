@@ -551,15 +551,19 @@ function renderAbout() {
       <table class="about-table">
         <tbody>
           ${ABOUT_DATA.friends.map(friend => {
-            const masterHtml = friend.master ? `<div style="font-size: 11px; font-weight: normal; color: #000000; margin-top: 2px;">（主宰: ${friend.master}）</div>` : '';
-            const bannerHtml = friend.banner ? `<div style="margin-bottom: 4px;"><a href="${friend.url}" target="_blank" rel="noopener"><img src="${friend.banner}" alt="${friend.name}" style="max-height: 40px; border: 1px solid #ff85b6;"></a></div>` : '';
+            const masterHtml = friend.master ? `<span style="font-size: 11px; font-weight: normal; color: #000000; margin-left: 4px; white-space: nowrap;">（主宰: ${friend.master}）</span>` : '';
+            const bannerHtml = friend.banner ? `<div style="margin-bottom: 2px; line-height: 1;"><a href="${friend.url}" target="_blank" rel="noopener"><img src="${friend.banner}" alt="${friend.name}" style="max-height: 40px; border: 1px solid #ff85b6; display: block;"></a></div>` : '';
+            const linkHtml = friend.url 
+              ? `<a href="${friend.url}" target="_blank" rel="noopener" style="font-weight: bold;">${friend.name}</a> <span class="external-link-icon">⧉</span>`
+              : `<span style="font-weight: bold;">${friend.name}</span>`;
 
             return `
               <tr>
-                <th style="width: 140px; text-align: left; vertical-align: top;">
+                <th style="width: 200px; text-align: left; vertical-align: top;">
                   ${bannerHtml}
-                  <a href="${friend.url}" target="_blank" rel="noopener" style="font-weight: bold;">${friend.name}</a> <span class="external-link-icon">⧉</span>
-                  ${masterHtml}
+                  <div style="line-height: 1.4;">
+                    ${linkHtml}${masterHtml}
+                  </div>
                 </th>
                 <td style="vertical-align: middle;">
                   ${friend.description ? friend.description.replace(/\n/g, '<br>') : ''}
