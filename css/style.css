@@ -1076,6 +1076,27 @@ a:hover {
     border-top: 1px solid #d0e4f7;
     padding: 15px 10px 10px;
   }
+  /* 他サークル紹介のモバイル縦並び（サークル名・主宰の下に解説） */
+  #about-friends-container .about-table,
+  #about-friends-container .about-table tbody,
+  #about-friends-container .about-table tr,
+  #about-friends-container .about-table th,
+  #about-friends-container .about-table td {
+    display: block;
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+  #about-friends-container .about-table th {
+    padding: 8px 6px 4px 6px;
+    border-bottom: none !important;
+  }
+  #about-friends-container .about-table td {
+    padding: 0 6px 10px 6px;
+    border-bottom: 1px dotted #c8c8c8;
+  }
+  #about-friends-container .about-table tr:last-child td {
+    border-bottom: none;
+  }
   .work-detail-layout {
     flex-direction: column;
     align-items: center;
