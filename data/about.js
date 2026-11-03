@@ -12,6 +12,10 @@ const ABOUT_DATA = {
       value: "照覧舎（しょうらんしゃ / Shoransha）"
     },
     {
+      label: "サークル主",
+      value: "弌鶴（いっかく）"
+    },
+    {
       label: "主な活動",
       value: "アイマスやアニメ・漫画などといったジャンルでの二次創作、コミケット等の即売会での同人誌の頒布。\nアイマスに関しては「照覧舎｜P@STEL COLOR」名義で活動。"
     },
@@ -29,18 +33,32 @@ const ABOUT_DATA = {
   // 友人・知人のサークルやおすすめのサイトをここに追加してください。
   friends: [
     {
-      name: "白楼軒",
-      master: "ころまる",
-      url: "https://x.com/koro_yomu",
-      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
-      description: "友人のサークルです。東方や艦これをメインに出しているらしい。"
-    },
-    {
       name: "ドライブマニア",
       master: "ころまる",
-      url: null,
+      url: "https://x.com/koro_loli",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
-      description: "白楼軒と照覧舎による合同サークル（という体）。評論・情報に関してはこちらの名義で活動。"
+      description: "白楼軒と照覧舎による合同サークル（という体）。評論・情報に関してはこちら名義で活動。"
+    },
+    {
+      name: "白楼軒",
+      master: "ころまる",
+      url: "https://hakuroken.net/",
+      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
+      description: "友人のサークル。東方や艦これを中心に漫画本を出しているらしい。"
+    },
+    {
+      name: "喧屋",
+      master: "KI",
+      url: "https://x.com/KaBoiiiii",
+      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
+      description: "後輩のサークル。ゼンゼロ本を出すらしい。"
+    },
+    {
+      name: "パラクパニール",
+      master: "南都かりー",
+      url: "https://x.com/naan_and_curry",
+      banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
+      description: "友人のサークル。学〼で篠澤英語本を出しているらしい。"
     }
   ],
 
@@ -49,5 +67,48 @@ const ABOUT_DATA = {
     description: "当サイトはリンクフリーです。リンクの際はトップページ（https://shoransha.github.io/）にお願いいたします。<br>必要であれば下記のバナーをコピーしてご利用ください。",
     image: "picture/banner.png",
     code: '<a href="https://shoransha.github.io/"><img src="https://shoransha.github.io/picture/banner.png" alt="照覧舎" width="200" height="40"></a>'
-  }
+  },
+
+  // 4. 左サイドバー（バナースペース）
+  // 「照覧舎について」タブの左側に縦に並ぶバナーエリアを設定します。
+  // バナー画像ファイルは「picture/about_us」フォルダに格納してください（サイズは自動で200×40ピクセル固定となります）。
+  // 
+  // 【各項目の説明】
+  // - title: 見出しバーのテキスト（例: "▼オリジナル作品", "▼制作作品", "▼おすすめリンク"）
+  // - banners: その見出しの下に並べるバナーの一覧（配列）
+  //     - image: バナー画像ファイル名（"picture/about_us/" フォルダ内のファイル名）
+  //              ※ファイル名単体（"banner_sample.png"）でも、パス（"picture/about_us/banner_sample.png"）でもOK
+  //     - url: クリックしたときのリンク先URL（リンクなしの場合は null または ""）
+  //     - text: バナーの下に表示するテキスト（不要な場合は null または ""）
+  //     - isExternal: 外部サイトとして別タブで開く場合は true（⧉ アイコンが自動で付きます）
+  sidebar: [
+    {
+      title: "▼公式サイト集",
+      // banners: [
+      //   {
+      //     image: "banner_sample.png",
+      //     url: "https://shoransha.github.io/",
+      //     text: "照覧舎プロジェクト第1弾! ⧉",
+      //     isExternal: true
+      //   },
+      //   {
+      //     image: "banner_sample.png",
+      //     url: "#works",
+      //     text: "作品情報一覧へ",
+      //     isExternal: false
+      //   }
+      // ]
+    },
+    {
+      title: "▼他サークル集",
+      // banners: [
+      //   {
+      //     image: "banner_sample.png",
+      //     url: null,
+      //     text: null,
+      //     isExternal: false
+      //   }
+      // ]
+    }
+  ]
 };

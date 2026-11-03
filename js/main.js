@@ -441,8 +441,94 @@ function renderSettings() {
 function renderAbout() {
   const profileContainer = document.getElementById('about-profile-container');
   const bannerContainer = document.getElementById('about-banner-container');
+  const sidebarContainer = document.getElementById('about-sidebar');
   if (typeof ABOUT_DATA === 'undefined') return;
 
+  // 1. 左側サイドバー（バナースペース）の描画
+  if (sidebarContainer) {
+    if (ABOUT_DATA.sidebar && ABOUT_DATA.sidebar.length > 0) {
+      sidebarContainer.style.display = 'block';
+      sidebarContainer.innerHTML = ABOUT_DATA.sidebar.map(section => {
+        const bannersHtml = (section.banners || []).map(b => {
+          // 画像パスの補正（picture/about_us/ を自動解決）
+          let imgPath = '';
+          if (b.image) {
+            if (/^(https?:|\/|data:)/i.test(b.image) || b.image.startsWith('picture/') || b.image.startsWith('../picture/')) {
+              imgPath = b.image;
+            } else {
+              imgPath = 'picture/about_us/' + b.image;
+            }
+          }
+
+          // リンク先処理（#works, #blog等のタブ遷移対応）
+          let linkAttr = '';
+          if (b.url) {
+            if (b.url.startsWith('#')) {
+              const tabName = 'tab-' + b.url.replace('#', '');
+              linkAttr = `href="${b.url}" onclick="switchTab('${tabName}'); return false;"`;
+            } else if (b.isExternal) {
+              linkAttr = `href="${b.url}" target="_blank" rel="noopener"`;
+            } else {
+              linkAttr = `href="${b.url}"`;
+            }
+          }
+
+          const extIcon = (b.isExternal && b.url && !b.text?.includes('⧉') && !b.text?.includes('↗')) 
+            ? '<span class="external-link-icon">⧉</span>' 
+            : '';
+
+          // 200×40ピクセル固定のバナー画像HTML
+          const imgElem = `
+            <img 
+              src="${imgPath}" 
+              alt="${b.text ? b.text.replace(/<[^>]+>/g, '') : 'バナー'}" 
+              class="sidebar-banner-img"
+              onerror="this.style.display='none'; if(this.nextElementSibling) this.nextElementSibling.style.display='flex';"
+            >
+            <div class="sidebar-banner-placeholder" style="display: none;">
+              200 × 40 BANNER
+            </div>
+          `;
+
+          const bannerBoxHtml = b.url 
+            ? `<a ${linkAttr} class="sidebar-banner-link">${imgElem}</a>` 
+            : `<div class="sidebar-banner-link">${imgElem}</div>`;
+
+          // バナー下テキスト
+          let textHtml = '';
+          if (b.text) {
+            if (b.url) {
+              textHtml = `<div class="sidebar-banner-text"><a ${linkAttr}>${b.text}</a> ${extIcon}</div>`;
+            } else {
+              textHtml = `<div class="sidebar-banner-text"><span>${b.text}</span></div>`;
+            }
+          }
+
+          return `
+            <div class="sidebar-banner-item">
+              ${bannerBoxHtml}
+              ${textHtml}
+            </div>
+          `;
+        }).join('');
+
+        return `
+          <div class="sidebar-section">
+            <div class="sidebar-section-bar">
+              <div class="sidebar-section-bar-title">${section.title}</div>
+            </div>
+            <div class="sidebar-section-banners">
+              ${bannersHtml}
+            </div>
+          </div>
+        `;
+      }).join('');
+    } else {
+      sidebarContainer.style.display = 'none';
+    }
+  }
+
+  // 2. サークルプロフィールの描画
   if (profileContainer && ABOUT_DATA.profile) {
     profileContainer.innerHTML = `
       <table class="about-table">

@@ -12,7 +12,7 @@
   </script>
 
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=800">
   <title>照覧舎 - Shoransha Official Web Site</title>
   <meta name="keywords" content="照覧舎,しょうらんしゃ,同人サークル,イラスト,同人誌,創作,作品情報,コミケ,アイマス,アニメ,漫画,学マス">
   <meta name="description" content="同人サークル「照覧舎（しょうらんしゃ）」の公式Webサイトです。作品情報、イベント参加予定、サークルの最新情報を発信しています。">
@@ -155,27 +155,39 @@
            5. 照覧舎について タブ
            ==================================================================== -->
       <div id="tab-about" class="tab-content" style="display: none;">
-        <div class="section-bar">
-          <div class="section-bar-title">▼照覧舎について</div>
-        </div>
-        <div class="about-box">
-          <div id="about-profile-container">
+        <div class="about-layout-container">
+          
+          <!-- 左側サイドバー（バナースペース） -->
+          <aside id="about-sidebar" class="about-sidebar">
             <!-- data/about.js より自動描画 -->
+          </aside>
+
+          <!-- 右側メインコンテンツ -->
+          <div class="about-main-content">
+            <div class="section-bar">
+              <div class="section-bar-title">▼照覧舎について</div>
+            </div>
+            <div class="about-box">
+              <div id="about-profile-container">
+                <!-- data/about.js より自動描画 -->
+              </div>
+
+              <div class="section-bar" style="margin: 15px 0 6px 0;">
+                <div class="section-bar-title">▼他サークル紹介</div>
+              </div>
+              <div id="about-friends-container">
+                <!-- data/about.js より自動描画 -->
+              </div>
+
+              <div class="section-bar" style="margin: 15px 0 6px 0;">
+                <div class="section-bar-title">▼リンク・バナー</div>
+              </div>
+              <div id="about-banner-container" class="banner-preview-box">
+                <!-- data/about.js より自動描画 -->
+              </div>
+            </div>
           </div>
 
-          <div class="section-bar" style="margin: 15px 0 6px 0;">
-            <div class="section-bar-title">▼他サークル紹介</div>
-          </div>
-          <div id="about-friends-container">
-            <!-- data/about.js より自動描画 -->
-          </div>
-
-          <div class="section-bar" style="margin: 15px 0 6px 0;">
-            <div class="section-bar-title">▼リンク・バナー</div>
-          </div>
-          <div id="about-banner-container" class="banner-preview-box">
-            <!-- data/about.js より自動描画 -->
-          </div>
         </div>
       </div>
 

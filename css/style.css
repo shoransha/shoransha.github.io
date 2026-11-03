@@ -27,6 +27,11 @@
   font-display: swap;
 }
 
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -39,6 +44,7 @@ body {
   line-height: 1.5;
   color: #000000;
   background-color: #c9e6fc; /* 水色背景 */
+  min-width: 800px; /* PC版等比縮小表示用固定幅 */
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -61,6 +67,7 @@ a:hover {
   background-color: #bce1fd;
   border-bottom: 2px solid #8abde6;
   flex-shrink: 0;
+  min-width: 800px;
   z-index: 100;
 }
 
@@ -69,6 +76,7 @@ a:hover {
   overflow-y: scroll;
   overflow-x: auto;
   background-color: #c9e6fc;
+  min-width: 800px;
   padding: 0;
   scrollbar-width: thin;
   scrollbar-color: #5c9dd6 #c9e6fc;
@@ -195,7 +203,7 @@ a:hover {
    メインコンテンツコンテナ (白枠 780px)
    ========================================================================== */
 .content-wrapper {
-  width: 100%;
+  width: 780px;
   max-width: 780px;
   margin: 0 auto;
   background-color: #ffffff;
@@ -394,7 +402,7 @@ a:hover {
 }
 
 .more-toggle-btn:hover {
-  color: #ff3081;
+  color: #ff3300;
   text-decoration: underline;
 }
 
@@ -459,6 +467,115 @@ a:hover {
 /* ==========================================================================
    照覧舎について / サークル情報 (京アニ風 会社概要スタイル)
    ========================================================================== */
+.about-layout-container {
+  display: flex;
+  align-items: stretch;
+  width: 100%;
+}
+
+.about-sidebar {
+  width: 220px;
+  flex-shrink: 0;
+  border-right: 1px solid #d0e4f7;
+  padding: 6px 9px 15px 9px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.about-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-section {
+  margin-bottom: 14px;
+}
+
+.sidebar-section-bar {
+  background-color: #3b88e0;
+  background: linear-gradient(to bottom, #4a96ec 0%, #317ed8 100%);
+  color: #ffffff;
+  font-family: 'LightNovelPOP', 'NotoSansJP', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  padding: 4px 6px;
+  margin-bottom: 8px;
+  border-top: 1px solid #7cb5f5;
+  border-bottom: 1px solid #2063b0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-section-bar-title {
+  display: inline-block;
+  transform: scale(0.96, 1.16);
+  transform-origin: center center;
+  white-space: nowrap;
+}
+
+.sidebar-section-banners {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.sidebar-banner-item {
+  width: 200px;
+  text-align: center;
+}
+
+.sidebar-banner-link {
+  display: block;
+  width: 200px;
+  height: 40px;
+  text-decoration: none;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.sidebar-banner-img {
+  width: 200px;
+  height: 40px;
+  display: block;
+  object-fit: cover;
+  border: 1px solid #b6d7f5;
+  box-sizing: border-box;
+}
+
+.sidebar-banner-placeholder {
+  width: 200px;
+  height: 40px;
+  background: #f7fbff;
+  border: 1px dashed #b6d7f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: bold;
+  color: #6a9ec9;
+  box-sizing: border-box;
+}
+
+.sidebar-banner-text {
+  font-size: 11px;
+  line-height: 1.4;
+  margin-top: 3px;
+  text-align: center;
+  word-break: break-all;
+}
+
+.sidebar-banner-text a {
+  color: #0033cc;
+  text-decoration: underline;
+}
+
+.sidebar-banner-text a:hover {
+  color: #ff3300;
+}
+
 #tab-about .section-bar {
   background-color: #56cada;
   background: linear-gradient(to bottom, #60d4e3 0%, #47c2d3 100%);
@@ -580,29 +697,6 @@ a:hover {
   font-size: 11px;
   border-top: 1px solid #d0e4f7;
   margin-top: 15px;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 600px) {
-  .list-row {
-    flex-wrap: wrap;
-  }
-  .list-date {
-    width: 70px;
-  }
-  .list-category {
-    width: auto;
-    margin-right: 8px;
-  }
-  .list-body {
-    width: 100%;
-    margin-top: 2px;
-    padding-left: 8px;
-  }
-  .nav-btn {
-    padding: 0 10px;
-    font-size: 12px;
-  }
 }
 
 /* ==========================================================================
@@ -940,21 +1034,5 @@ a:hover {
   padding: 3px 6px;
   text-align: center;
   word-break: break-word;
-}
-
-@media (max-width: 600px) {
-  .work-detail-layout {
-    flex-direction: column;
-    align-items: center;
-  }
-  .work-main-cover {
-    width: 140px;
-  }
-  .sample-gallery-grid {
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  }
-  .blog-image-box {
-    max-width: 100%;
-  }
 }
 
