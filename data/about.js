@@ -34,28 +34,24 @@ const ABOUT_DATA = {
   friends: [
     {
       name: "ドライブマニア",
-      master: "ころまる",
       url: "https://x.com/koro_loli",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "白楼軒と照覧舎による合同サークル（という体）。評論・情報に関してはこちら名義で活動。"
     },
     {
       name: "白楼軒",
-      master: "ころまる",
       url: "https://hakuroken.net/",
       banner: "picture/about_us/hakuroken.png", // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "友人のサークル。東方や艦これを中心に漫画本を出しているらしい。"
     },
     {
       name: "喧屋",
-      master: "KI",
       url: "https://x.com/KaBoiiiii",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "後輩のサークル。ゼンゼロ本を出すらしい。"
     },
     {
       name: "パラクパニール",
-      master: "南都かりー",
       url: "https://x.com/naan_and_curry",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
       description: "友人のサークル。学〼で篠澤英語本を出しているらしい。"

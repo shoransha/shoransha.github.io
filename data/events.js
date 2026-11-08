@@ -15,12 +15,20 @@
  */
 const EVENTS_DATA = [
   {
+    date: "令和8年11月6日",
+    category: "コミケット",
+    text: "C109にて照覧舎は、水曜日 東地区 東３ホール メ27b に配置されました。",
+    url: null,
+    isExternal: false,
+    isNew: true
+  },
+  {
     date: "令和8年8月18日",
     category: "コミケット",
     text: "C109出展申込完了しました！　かぐや様で新刊発行予定です。",
     url: "blog/20260820_C109.html",
     isExternal: true,
-    isNew: true
+    isNew: false
   },
   {
     date: "令和8年8月16日",
