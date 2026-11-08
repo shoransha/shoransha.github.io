@@ -36,7 +36,7 @@ const EVENTS_DATA = [
     text: "C108参加しました！　弊サークルへ足を運んでくださったみなさん、ありがとうございました！",
     url: null,
     isExternal: false,
-    isNew: true
+    isNew: false
   },
   {
     date: "令和8年6月5日",
