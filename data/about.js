@@ -16,6 +16,10 @@ const ABOUT_DATA = {
       value: "弌鶴（いっかく）"
     },
     {
+      label: "仲間たち",
+      value: "棚山（たなやま）"
+    },
+    {
       label: "主な活動",
       value: "アイマスやアニメ・漫画などといったジャンルでの二次創作、コミケット等の即売会での同人誌の頒布。\nアイマスに関しては「照覧舎｜P@STEL COLOR」名義で活動。"
     },
@@ -25,7 +29,7 @@ const ABOUT_DATA = {
     },
     {
       label: "著作権",
-      value: "各作品の公式二次創作ガイドラインの許す範囲内において、当サークル自身の制作物および当Webサイト内に掲載されているすべての画像・文章に関してのみ、クリエイティブ・コモンズ 表示 4.0 国際 ライセンス（<a href=\"https://creativecommons.org/licenses/by/4.0/deed.ja\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>）に準拠します。<br>※各原作作品の著作権・知的財産権はそれぞれの原著作者・公式権利者様に帰属します。\nまた、照覧舎の方針として頒布した同人誌に関しては頒布後二か月程度を目安として当サイト上にて公開を行っております。"
+      value: "当サークル自身の一次創作物に関してのみ、クリエイティブ・コモンズ 表示 4.0 国際 ライセンス（<a href=\"https://creativecommons.org/licenses/by/4.0/deed.ja\" target=\"_blank\" rel=\"noopener\">CC BY 4.0</a>）に準拠します。<br>※各原作作品の著作権・知的財産権はそれぞれの原著作者・公式権利者様に帰属します。\nまた、照覧舎の方針として頒布した同人誌に関しては頒布後二か月程度を目安として当サイト上にて公開を行っております。"
     }
   ],
 
@@ -48,7 +52,7 @@ const ABOUT_DATA = {
       name: "喧屋",
       url: "https://x.com/KaBoiiiii",
       banner: null, // バナー画像がある場合は "picture/banner_friend01.gif" など。ない場合は null
-      description: "後輩のサークル。ゼンゼロ本を出すらしい。"
+      description: "後輩のサークル。ゼンゼロ本を出しているらしい。"
     },
     {
       name: "パラクパニール",
